@@ -25,5 +25,5 @@
 <p align="center">The core of the IoT dashboard using the FastAPI framework with HTTP and MQTT protocol support.</p>
 
 <p align="center"> 
-  <img src="https://github.com/Mohsen-Khodabakhshi/iot-dashboard/assets/logo.png" alt="Logo" width="350" height="350">
+  <img src="https://raw.githubusercontent.com/Mohsen-Khodabakhshi/iot-dashboard/main/assets/logo.png" alt="Logo" width="350" height="350">
 </p>
