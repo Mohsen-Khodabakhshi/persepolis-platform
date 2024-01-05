@@ -24,6 +24,6 @@
 
 <p align="center">The core of the Internet of Things or IoT platform using the FastAPI framework with HTTP and MQTT support.</p>
 
-<p align="center"> 
+<p align="center">
   <img src="https://raw.githubusercontent.com/Mohsen-Khodabakhshi/iot-dashboard/main/assets/logo.png" alt="Logo" width="350" height="350">
 </p>
