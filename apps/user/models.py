@@ -5,15 +5,10 @@ from tortoise.validators import RegexValidator
 
 from helper.mixins.models import BaseModel
 
+from apps.user.enums import UserType
+
 
 class UserModel(BaseModel):
-    ADMIN = 10
-    CLIENT = 20
-    USER_TYPES = (
-        (ADMIN, "Admin"),
-        (CLIENT, "Client"),
-    )
-
     EMAIL_VALIDATOR = RegexValidator(
         r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$", re.I
     )
@@ -23,7 +18,7 @@ class UserModel(BaseModel):
     username = fields.CharField(max_length=25, unique=True)
     email = fields.CharField(max_length=255, unique=True, validators=[EMAIL_VALIDATOR])
     active = fields.BooleanField(default=True)
-    type = fields.SmallIntField(choices=USER_TYPES, default=CLIENT)
+    type = fields.CharEnumField(UserType, default=UserType.CLIENT)
 
     class Meta:
         table = "user"

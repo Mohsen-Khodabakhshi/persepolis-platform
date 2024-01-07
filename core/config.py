@@ -6,6 +6,16 @@ class BaseSettings(PydanticBaseSettings):
         env_file = ".env"
 
 
+class AppSettings(BaseSettings):
+    secret_key: str
+
+    class Config:
+        env_prefix = "APP_"
+
+
+app_settings = AppSettings()
+
+
 class DBSettings(BaseSettings):
     host: str = "localhost"
     port: int = 5432
@@ -18,3 +28,15 @@ class DBSettings(BaseSettings):
 
 
 db_settings = DBSettings()
+
+
+class JwtSettings(BaseSettings):
+    admin_token_expire_hours: int
+    client_token_expire_hours: int
+    algorithm: str = "HS256"
+
+    class Config:
+        env_prefix = "JWT_"
+
+
+jwt_settings = JwtSettings()
