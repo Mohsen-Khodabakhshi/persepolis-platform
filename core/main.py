@@ -1,9 +1,15 @@
 from fastapi import FastAPI
 
-from services.events import connect_to_db
-from core.config import db_settings
-from apps import models
+from core import events
 
 app = FastAPI()
 
-connect_to_db(app, db_settings, models)
+
+@app.on_event("startup")
+async def startup_event() -> None:
+    await events.startup_event_handler(app)
+
+
+@app.on_event("shutdown")
+async def shutdown_event() -> None:
+    await events.shutdown_event_handler(app)
