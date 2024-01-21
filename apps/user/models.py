@@ -3,7 +3,7 @@ import re
 from tortoise import fields
 from tortoise.validators import RegexValidator
 
-from helper.mixins.models import BaseModel
+from helper.models import BaseModel
 
 from apps.user.enums import UserType
 
