@@ -40,3 +40,16 @@ class JwtSettings(BaseSettings):
 
 
 jwt_settings = JwtSettings()
+
+
+class MinioSettings(BaseSettings):
+    access_key: str
+    secret_key: str
+    default_bucket_name: str
+    enable: bool
+
+    class Config:
+        env_prefix = "MINIO_"
+
+
+minio_settings = MinioSettings()
