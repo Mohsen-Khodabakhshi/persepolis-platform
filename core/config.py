@@ -43,6 +43,7 @@ jwt_settings = JwtSettings()
 
 
 class MinioSettings(BaseSettings):
+    endpoint_url: str
     access_key: str
     secret_key: str
     default_bucket_name: str
